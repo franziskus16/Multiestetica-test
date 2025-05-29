@@ -99,12 +99,12 @@ npm run test
 
 ### Resumen de la funcionalidad implementada
 
-• Detalle de opinión estática: Componente que muestra la opinión principal, con datos hardcodeados para cumplir con el diseño Figma.
-• Módulo lateral (Más experiencias): Carga dinámica de datos desde backend con filtro para mostrar solo items con más de 20 comentarios. Toggle para mostrar todos o menos.
-• Formulario “Cuéntanos tu experiencia”:
-• Campos con validación en vivo y al enviar.
-• Campo “¿Recomendarías el tratamiento?” condiciona la aparición de campos adicionales.
-• Validación de longitud y campos obligatorios con mensajes de error.
+- Detalle de opinión estática: Componente que muestra la opinión principal, con datos hardcodeados para cumplir con el diseño Figma.
+- Módulo lateral (Más experiencias): Carga dinámica de datos desde backend con filtro para mostrar solo items con más de 20 comentarios. Toggle para mostrar todos o menos.
+- Formulario “Cuéntanos tu experiencia”:
+- Campos con validación en vivo y al enviar.
+- Campo “¿Recomendarías el tratamiento?” condiciona la aparición de campos adicionales.
+- Validación de longitud y campos obligatorios con mensajes de error.
 
 ---
 
