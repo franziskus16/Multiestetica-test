@@ -1,0 +1,66 @@
+// src/styles/settings/_variables.scss
+
+// COLORS
+$color-primary: #ff838a;
+$color-primary2: #19b5bc;
+$color-primary-dark: #b80063;
+$color-primary-light: #f9e6f0;
+
+$color-secondary: #e78d45;
+$color-secondary-dark: #333333;
+$color-secondary-light: #e0f4fb;
+$color-secondary-light2: #acb5bc;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-neutral-100: #ffffff;
+$color-neutral-200: #f3f3f3;
+$color-neutral-300: #f7f7f7;
+$color-neutral-400: #eeeeee;
+$color-neutral-500: #9e9e9e;
+$color-neutral-600: #727d85;
+$color-neutral-700: #5e5e5e;
+$color-neutral-800: #48545c;
+$color-neutral-900: #383b41;
+
+$color-success: #4caf50;
+$color-warning: #ff9800;
+$color-error: #f44336;
+$color-info: #2196f3;
+
+// TIPOGRAFÍA
+$font-family-base: "Roboto", sans-serif;
+$font-family-header: "Poppins", sans-serif;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.5rem;
+$font-size-xxl: 2rem;
+$font-size-xxxl: 3rem;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$line-height-sm: 1.2;
+$line-height-md: 1.5;
+$line-height-lg: 1.8;
+
+// ESPACIADO
+$spacing-xxs: 0.25rem;
+$spacing-xs: 0.5rem;
+$spacing-sm: 0.75rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+
+// BREAKPOINTS
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
