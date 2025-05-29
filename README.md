@@ -54,10 +54,12 @@ Este repositorio contiene la implementación de la prueba técnica para Multiest
 
 1. Posicionarse en la carpeta `/backend`
 2. Ejecutar:
-   ```bash
-   node app.js
-   ```
-   Esto levantará el servidor en http://localhost:3000
+
+```bash
+node app.js
+```
+
+Esto levantará el servidor en http://localhost:3000
 
 ---
 
