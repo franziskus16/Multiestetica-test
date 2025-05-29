@@ -6,7 +6,7 @@
     <textarea
       :id="id"
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="onInput"
       :placeholder="placeholder"
       :class="{ 'textarea-input--error': error }"
       :rows="rows"
@@ -14,8 +14,8 @@
     <span
       class="text-area__counter"
       :class="{
-        'text-area__counter--invalid': modelValue.length < min,
-        'text-area__counter--valid': modelValue.length >= min,
+        'text-area__counter--invalid': hasTyped && modelValue.length < min,
+        'text-area__counter--valid': hasTyped && modelValue.length >= min,
       }"
     >
       {{ modelValue.length }} / {{ max }} (mín. {{ min }})
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "TextAreaInput",
+  name: 'TextAreaInput',
   props: {
     modelValue: String,
     label: String,
@@ -46,6 +46,17 @@ export default {
     rows: {
       type: Number,
       default: 4,
+    },
+  },
+  data() {
+    return {
+      hasTyped: false,
+    };
+  },
+  methods: {
+    onInput(event) {
+      if (!this.hasTyped) this.hasTyped = true;
+      this.$emit('update:modelValue', event.target.value);
     },
   },
 };
@@ -77,10 +88,9 @@ export default {
       font-size: $font-size-sm;
     }
   }
-}
-
-.text-area--error {
-  border-color: red;
+  &--error textarea {
+    border-color: red;
+  }
 }
 
 .text-area__counter {
@@ -89,7 +99,7 @@ export default {
   bottom: 8px;
   right: 12px;
   font-size: 0.75rem;
-  color: #6c757d;
+  color: $color-neutral-500;
   &--invalid {
     color: red;
   }

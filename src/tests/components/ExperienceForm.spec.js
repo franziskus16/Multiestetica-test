@@ -55,6 +55,6 @@ describe('ExperienceForm.vue', () => {
 
     // No deben quedar errores en pantalla
     expect(wrapper.text()).not.toContain('Este campo es obligatorio');
-    expect(wrapper.emitted()).toBeDefined(); // podrías añadir un emit al enviar si deseas validarlo
+    expect(wrapper.emitted()).toBeDefined();
   });
 });

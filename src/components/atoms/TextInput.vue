@@ -5,13 +5,13 @@
       :placeholder="placeholder"
       :value="modelValue"
       :class="['text-input', { 'text-input--error': error }]"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="onInput"
     />
     <span
       class="text-input__counter"
       :class="{
-        'text-input__counter--invalid': modelValue.length < min,
-        'text-input__counter--valid': modelValue.length >= min,
+        'text-input__counter--invalid': hasTyped && modelValue.length < min,
+        'text-input__counter--valid': hasTyped && modelValue.length >= min,
       }"
     >
       {{ modelValue.length }} / {{ max }} (mín. {{ min }})
@@ -21,13 +21,13 @@
 
 <script>
 export default {
-  name: "TextInput",
+  name: 'TextInput',
   props: {
     modelValue: String,
     placeholder: String,
     type: {
       type: String,
-      default: "text",
+      default: 'text',
     },
     error: Boolean,
     max: {
@@ -37,6 +37,17 @@ export default {
     min: {
       type: Number,
       default: 20,
+    },
+  },
+  data() {
+    return {
+      hasTyped: false,
+    };
+  },
+  methods: {
+    onInput(event) {
+      if (!this.hasTyped) this.hasTyped = true;
+      this.$emit('update:modelValue', event.target.value);
     },
   },
 };
@@ -64,9 +75,6 @@ export default {
 .text-input--error {
   border-color: red;
 }
-.text-input--error {
-  border-color: red;
-}
 
 .text-input__counter {
   bottom: 6px;
@@ -75,13 +83,12 @@ export default {
   font-weight: 500;
   display: flex;
   justify-content: end;
-}
-
-.text-input__counter--invalid {
-  color: red;
-}
-
-.text-input__counter--valid {
-  color: green;
+  color: $color-neutral-500;
+  &--invalid {
+    color: red;
+  }
+  &--valid {
+    color: green;
+  }
 }
 </style>
