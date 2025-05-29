@@ -20,7 +20,7 @@
       />
     </FormField>
 
-    <section v-if="form.recommend === 'si'">
+    <section v-if="form.recommend === 'si'" data-testid="experience-fields">
       <FormField label="Título de la experiencia" :error="errors.title">
         <TextInput
           v-model="form.title"
@@ -48,15 +48,15 @@
 </template>
 
 <script>
-import FormField from "@/components/molecules/FormField.vue";
-import SelectInput from "@/components/atoms/SelectInput.vue";
-import RadioInput from "@/components/atoms/RadioInput.vue";
-import TextInput from "@/components/atoms/TextInput.vue";
-import TextAreaInput from "@/components/atoms/TextAreaInput.vue";
-import BaseButton from "@/components/atoms/Button.vue";
+import FormField from '@/components/molecules/FormField.vue';
+import SelectInput from '@/components/atoms/SelectInput.vue';
+import RadioInput from '@/components/atoms/RadioInput.vue';
+import TextInput from '@/components/atoms/TextInput.vue';
+import TextAreaInput from '@/components/atoms/TextAreaInput.vue';
+import BaseButton from '@/components/atoms/Button.vue';
 
 export default {
-  name: "ExperienceForm",
+  name: 'ExperienceForm',
   components: {
     FormField,
     SelectInput,
@@ -68,31 +68,31 @@ export default {
   data() {
     return {
       form: {
-        treatment: "",
-        recommend: "",
-        title: "",
-        description: "",
+        treatment: '',
+        recommend: '',
+        title: '',
+        description: '',
       },
       errors: {},
       validationActive: false,
       treatmentOptions: [
-        { value: "aumento-pecho", label: "Aumento de pecho" },
-        { value: "abdominoplastia", label: "Abdominoplastia" },
-        { value: "rinoplastia", label: "Rinoplastia" },
+        { value: 'aumento-pecho', label: 'Aumento de pecho' },
+        { value: 'abdominoplastia', label: 'Abdominoplastia' },
+        { value: 'rinoplastia', label: 'Rinoplastia' },
       ],
       recommendOptions: [
-        { value: "si", label: "Sí" },
-        { value: "no", label: "No" },
+        { value: 'si', label: 'Sí' },
+        { value: 'no', label: 'No' },
       ],
     };
   },
   watch: {
-    "form.recommend"(val) {
-      if (val === "no") {
+    'form.recommend'(val) {
+      if (val === 'no') {
         this.errors.title = null;
         this.errors.description = null;
-        this.form.title = "";
-        this.form.description = "";
+        this.form.title = '';
+        this.form.description = '';
       }
     },
   },
@@ -104,9 +104,9 @@ export default {
       if (!this.validationActive) return;
       const len = this.form.title.trim().length;
       if (len === 0) {
-        this.errors.title = "Este campo es obligatorio";
+        this.errors.title = 'Este campo es obligatorio';
       } else if (len < 10 || len > 100) {
-        this.errors.title = "Debe tener entre 10 y 100 caracteres";
+        this.errors.title = 'Debe tener entre 10 y 100 caracteres';
       } else {
         this.errors.title = null;
       }
@@ -115,9 +115,9 @@ export default {
       if (!this.validationActive) return;
       const len = this.form.description.trim().length;
       if (len === 0) {
-        this.errors.description = "Este campo es obligatorio";
+        this.errors.description = 'Este campo es obligatorio';
       } else if (len < 20 || len > 500) {
-        this.errors.description = "Debe tener entre 20 y 500 caracteres";
+        this.errors.description = 'Debe tener entre 20 y 500 caracteres';
       } else {
         this.errors.description = null;
       }
@@ -126,22 +126,22 @@ export default {
       const errors = {};
 
       if (!this.form.treatment) {
-        errors.treatment = "Este campo es obligatorio";
+        errors.treatment = 'Este campo es obligatorio';
       }
       if (!this.form.recommend) {
-        errors.recommend = "Este campo es obligatorio";
+        errors.recommend = 'Este campo es obligatorio';
       }
 
-      if (this.form.recommend === "si") {
+      if (this.form.recommend === 'si') {
         const titleLen = this.form.title.trim().length;
-        if (titleLen === 0) errors.title = "Este campo es obligatorio";
+        if (titleLen === 0) errors.title = 'Este campo es obligatorio';
         else if (titleLen < 10 || titleLen > 100)
-          errors.title = "Debe tener entre 10 y 100 caracteres";
+          errors.title = 'Debe tener entre 10 y 100 caracteres';
 
         const descLen = this.form.description.trim().length;
-        if (descLen === 0) errors.description = "Este campo es obligatorio";
+        if (descLen === 0) errors.description = 'Este campo es obligatorio';
         else if (descLen < 20 || descLen > 500)
-          errors.description = "Debe tener entre 20 y 500 caracteres";
+          errors.description = 'Debe tener entre 20 y 500 caracteres';
       }
 
       this.errors = errors;
@@ -151,14 +151,14 @@ export default {
       this.validationActive = true;
 
       if (!this.validate()) return;
-      alert("Formulario enviado correctamente!");
+      alert('Formulario enviado correctamente!');
       // Limpieza
       this.validationActive = false;
       this.form = {
-        treatment: "",
-        recommend: "",
-        title: "",
-        description: "",
+        treatment: '',
+        recommend: '',
+        title: '',
+        description: '',
       };
       this.errors = {};
     },
