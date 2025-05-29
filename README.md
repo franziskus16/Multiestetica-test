@@ -31,20 +31,25 @@ Este repositorio contiene la implementación de la prueba técnica para Multiest
 
 ## Estructura del proyecto
 
+```bash
 /backend
-• app.js # Servidor Node.js con API REST
+  └── app.js                # Servidor Node.js con API REST
+
 /src
-/components # Componentes Vue (átomos, moléculas, organismos)
-/pages
-• HomePage.vue # Página principal que compone los componentes
-/App.vue # Root component
-/main.js # Entry point de Vue
+  ├── components            # Componentes Vue (átomos, moléculas, organismos)
+  ├── pages
+  │   └── HomePage.vue      # Página principal que compone los componentes
+  ├── styles
+  │   ├── _variables.scss   # Variables SCSS (colores, tamaños, etc.)
+  │   └── main.scss         # Estilos globales
+  ├── App.vue               # Root component
+  └── main.js               # Entry point de Vue
+
 /tests
-/components # Tests unitarios de componentes
-/integration # Tests de integración (páginas completas)
-/styles
-• \_variables.scss # Variables SCSS (colores, tamaños, etc.)
-• main.scss # Estilos globales
+  ├── components            # Tests unitarios de componentes
+  └── integration           # Tests de integración (páginas completas)
+
+```
 
 ---
 
@@ -91,9 +96,9 @@ Ejecutar todos los tests con Vitest:
 npm run test
 ```
 
-• Los tests cubren:
-• Validación y comportamiento del formulario (ExperienceForm.vue)
-• Renderizado y carga de componentes en la página principal (HomePage.vue)
+- Los tests cubren:
+- Validación y comportamiento del formulario (ExperienceForm.vue)
+- Renderizado y carga de componentes en la página principal (HomePage.vue)
 
 ---
 
