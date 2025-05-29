@@ -34,9 +34,9 @@
   </header>
 </template>
 <script>
-import BaseButton from "@/components/atoms/Button.vue";
+import BaseButton from '@/components/atoms/Button.vue';
 export default {
-  name: "Header",
+  name: 'AppHeader',
   components: {
     BaseButton,
   },

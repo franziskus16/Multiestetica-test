@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Header />
+    <AppHeader />
     <div class="home-page">
       <UserOpinion />
       <SideExperiences />
@@ -9,10 +9,9 @@
 </template>
 
 <script setup>
-import UserOpinion from "@/components/organisms/UserOpinion.vue";
-import SideExperiences from "../components/organisms/SideExperiences.vue";
-import Header from "../components/organisms/Header.vue";
-import ExperienceForm from "@/components/organisms/ExperienceForm.vue";
+import UserOpinion from '@/components/organisms/UserOpinion.vue';
+import SideExperiences from '../components/organisms/SideExperiences.vue';
+import AppHeader from '../components/organisms/AppHeader.vue';
 </script>
 
 <style scoped lang="scss">

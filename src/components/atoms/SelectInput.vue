@@ -48,9 +48,13 @@ export default {
   background-size: 1rem;
   color: $color-neutral-600;
   @media (max-width: 768px) {
-    appearance: auto;
-    background-image: none;
-    font-size: 16px;
+    appearance: auto !important;
+    background-image: none !important;
+    background: white !important;
+    position: static !important;
+    transform: none !important;
+    z-index: auto !important;
+    font-size: 16px !important;
   }
 }
 .select-placeholder {
