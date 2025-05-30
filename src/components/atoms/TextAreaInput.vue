@@ -30,7 +30,10 @@ export default {
     modelValue: String,
     label: String,
     placeholder: String,
-    error: String,
+    error: {
+      type: [String, Boolean],
+      default: false,
+    },
     max: {
       type: Number,
       default: 18000,
@@ -41,7 +44,8 @@ export default {
     },
     id: {
       type: String,
-      required: true,
+      required: false,
+      default: null,
     },
     rows: {
       type: Number,
