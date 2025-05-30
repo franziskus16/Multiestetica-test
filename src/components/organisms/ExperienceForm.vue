@@ -152,7 +152,7 @@ export default {
 
       if (!this.validate()) return;
       alert('Formulario enviado correctamente!');
-      // Limpieza
+
       this.validationActive = false;
       this.form = {
         treatment: '',
@@ -174,15 +174,15 @@ export default {
   margin-bottom: $spacing-lg;
 }
 .experience-form {
-  margin-top: 1rem;
+  margin-top: $spacing-md;
   button {
     text-transform: uppercase;
     min-width: 225px;
     height: 46px;
     border-radius: 23px;
     padding: 25px 25px;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
     margin-top: $spacing-xxl;
   }
 }

@@ -53,7 +53,7 @@ describe('ExperienceForm.vue', () => {
 
     await wrapper.find('form').trigger('submit.prevent');
 
-    // No deben quedar errores en pantalla
+    // No han de quedar errors a la pantalla
     expect(wrapper.text()).not.toContain('Este campo es obligatorio');
     expect(wrapper.emitted()).toBeDefined();
   });

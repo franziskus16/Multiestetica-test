@@ -66,15 +66,15 @@ export default {
   margin: 0 auto;
   position: relative;
   width: calc(100% - 32px);
-  padding: 0.25rem 1rem 0 1rem;
+  padding: $spacing-xxs $spacing-md 0 $spacing-md;
   @media (max-width: $breakpoint-md) {
-    padding: 1rem;
+    padding: $spacing-md;
   }
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
   color: #2c3e50;
   img {
     height: 20px;
@@ -91,7 +91,7 @@ export default {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: $font-size-xl;
   cursor: pointer;
 }
 .top-actions {
@@ -103,7 +103,7 @@ export default {
   background: none;
   border: none;
   color: #007b8f;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   cursor: pointer;
   padding: 0.5rem;
   &:hover {
@@ -112,8 +112,8 @@ export default {
   &__registration {
     background-color: #ff838a;
     border-radius: 1.7857142857rem;
-    color: #fff;
-    font-size: 12px;
+    color: $color-neutral-100;
+    font-size: $font-size-xs;
     height: 1.5714285714rem 25.1429px;
     padding: 0 0.5714285714rem;
     width: fit-content;
@@ -129,7 +129,7 @@ export default {
     }
   }
   &__enter {
-    font-size: 12px;
+    font-size: $font-size-xs;
     background-color: $color-neutral-100;
     border: none;
     font-weight: $font-weight-bold;
@@ -140,13 +140,13 @@ export default {
     }
   }
   &__access {
-    font-size: 12px;
+    font-size: $font-size-xs;
     color: $color-primary2;
     background-color: $color-neutral-100;
     border: none;
     text-transform: uppercase;
-    font-weight: 700;
-    padding-left: 1rem;
+    font-weight: $font-weight-bold;
+    padding-left: $spacing-md;
     border-inline-start: 1px solid #919ba2;
     cursor: pointer;
     &:hover {
@@ -159,7 +159,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   background-color: $color-neutral-100;
-  padding: 0.75rem 1rem;
+  padding: $spacing-sm $spacing-md;
   max-width: 1140px;
   margin: 0 auto;
   position: relative;
@@ -169,7 +169,7 @@ export default {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 1rem;
+  gap: $spacing-md;
   padding: 0;
   margin: 0;
 }
@@ -190,8 +190,8 @@ export default {
 .opinion-button {
   border: none;
   border-radius: 3px;
-  padding: 0.5rem 1rem;
-  font-weight: 800;
+  padding: $spacing-xs $spacing-md;
+  font-weight: $font-weight-bold;
   cursor: pointer;
 }
 
@@ -215,7 +215,7 @@ export default {
     &.open {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: $spacing-md;
     }
 
     .nav-links {

@@ -3,7 +3,7 @@ import { mount, flushPromises } from '@vue/test-utils';
 import HomePage from '@/pages/HomePage.vue';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-// Mock de fetch con dos experiencias (una válida, otra no)
+// Mock de fetch con dues experiencies (una válida, l'altre no)
 beforeEach(() => {
   globalThis.fetch = vi.fn(() =>
     Promise.resolve({
@@ -38,19 +38,20 @@ describe('HomePage.vue', () => {
   it('renders header, user opinion, and filters SideExperiences correctly', async () => {
     const wrapper = mount(HomePage);
 
-    // Esperar a que se resuelva fetch y se rendericen los cambios
+    // Esperar a que es resolgui el fetch y es renderitzin els canvis
     await flushPromises();
 
-    // Comprobaciones básicas
+    // Comprovacións básiques de renderització
+
     expect(wrapper.findComponent({ name: 'AppHeader' }).exists()).toBe(true);
     expect(wrapper.findComponent({ name: 'UserOpinion' }).exists()).toBe(true);
     expect(wrapper.findComponent({ name: 'SideExperiences' }).exists()).toBe(
       true
     );
 
-    // Comprobar que se renderiza la experiencia con >20 comentarios
+    // Comprova que es renderitza l'experiencia amb >20 comments
     expect(wrapper.text()).toContain('Experiencia visible');
-    // No debe renderizarse la que tiene <=20 comentarios
+    // No haurien de renderitzarse la que te <=20 comments
     expect(wrapper.text()).not.toContain('Experiencia oculta');
   });
 });

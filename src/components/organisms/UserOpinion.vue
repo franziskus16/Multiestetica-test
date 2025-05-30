@@ -103,27 +103,28 @@
 </template>
 
 <script setup>
-import BaseButton from "@/components/atoms/Button.vue";
-import ExperienceForm from "@/components/organisms/ExperienceForm.vue";
+import BaseButton from '@/components/atoms/Button.vue';
+import ExperienceForm from '@/components/organisms/ExperienceForm.vue';
 </script>
 
 <style lang="scss" scoped>
 .user-opinion {
-  padding: 1.5rem;
+  padding: $spacing-lg $spacing-lg 6rem $spacing-lg;
   background-color: #fff;
-  border-radius: 1rem;
+  border-radius: $spacing-md;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   max-width: 750px;
   width: 100%;
   @media (max-width: 768px) {
     border-radius: 0;
     max-width: fit-content;
+    padding: $spacing-lg;
   }
   &__header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
   }
 
   &__avatar {
@@ -139,20 +140,20 @@ import ExperienceForm from "@/components/organisms/ExperienceForm.vue";
   }
 
   &__name {
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
     font-weight: 600;
     margin: 0;
   }
 
   &__date {
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
     color: #666;
     margin-top: 0;
   }
 
   &__title {
     font-size: 1.75rem;
-    margin: 1rem 0 0.5rem;
+    margin: $spacing-md 0 0.5rem;
     color: $color-neutral-900;
     @media (max-width: $breakpoint-md) {
       font-size: 1.25rem;
@@ -167,7 +168,8 @@ import ExperienceForm from "@/components/organisms/ExperienceForm.vue";
   }
   &__info {
     display: inline-flex;
-    gap: 1.5rem;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
   }
 
   &__worthit {
@@ -186,22 +188,25 @@ import ExperienceForm from "@/components/organisms/ExperienceForm.vue";
   &__gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
+    gap: 2rem;
 
     @media (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   &__image-wrapper {
+    display: grid;
+    place-items: center;
     width: 100%;
     aspect-ratio: 1;
     max-width: 153px;
+    justify-self: center;
   }
 
   &__image {
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
+    border-radius: $spacing-md;
     object-fit: cover;
     display: block;
   }
@@ -217,8 +222,8 @@ import ExperienceForm from "@/components/organisms/ExperienceForm.vue";
   }
   &__surgery {
     display: flex;
-    margin-bottom: 1rem;
-    gap: 1rem;
+    margin-bottom: $spacing-md;
+    gap: $spacing-md;
     &-logo {
       border-radius: 5px;
       min-width: 63px;
@@ -233,7 +238,7 @@ import ExperienceForm from "@/components/organisms/ExperienceForm.vue";
       p {
         font-weight: $font-weight-regular;
         font-size: $font-size-xs;
-        color: #acb5bc;
+        color: $color-secondary-light2;
       }
     }
   }
